@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     include: ['react-slick']
-  }
+  },
+  base:"/Empire-Burguer-BRChallenger",
 })
