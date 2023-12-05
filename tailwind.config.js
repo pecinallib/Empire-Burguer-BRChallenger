@@ -7,6 +7,15 @@ export default {
         bannerMenuMobile: 'url(./src/assets/banner-menu-mobile.png)',
         bannerMenuWeb: 'url(./src/assets/banner-menu.png)',
       },
+      keyframes: {
+        letreiro: {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        letreiro: 'letreiro 30s linear infinite',
+      },
     },
     fontFamily: {
       Lato: ['Lato', 'sans-serif'],

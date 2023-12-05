@@ -24,7 +24,7 @@ export const FeedBacks = () => {
   }, [])
 
   return (
-    <section className="bg-red-50 pt-16">
+    <section id='comentario' className="bg-red-50 pt-16">
       <div className='w-96 m-auto'>
         <h1 className="text-stone-950 text-opacity-90 text-[25px] font-Lilita leading-7">NOSSA REALEZA<br /><p className="text-stone-950 text-opacity-70 text-base font-Lato leading-snug">A satisfação de nossos clientes em primeiro lugar!</p></h1>
       </div> 

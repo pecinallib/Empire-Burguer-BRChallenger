@@ -7,6 +7,7 @@ import { Footer } from './pages/footer'
 import { Cardapio } from './pages/cardapio'
 import { Delivery } from './pages/delivery'
 import { FeedBacks } from './components/feedbacks'
+import { Instagram } from './components/instagram'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Services/>
     <Cardapio/>
     <FeedBacks/>
+    <Instagram/>
     <Delivery/>
     <Footer/>
     </>

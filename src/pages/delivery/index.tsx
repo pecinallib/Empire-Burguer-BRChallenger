@@ -8,12 +8,12 @@ import phoneIcon from '../../assets/icons/phone.svg'
 export const Delivery = () => {
   return (
     <div className='bg-red-50 flex-col justify-start items-center flex w-full'>
-      <div className='lg:flex lg:items-center lg:mt-24'>
+      <div className='lg:flex lg:items-center '>
         <div className='mt-28 mb-9 lg:mr-8'>
           <img src={bannerPhone} alt="Phone and Burguer" className='w-96 h-80 lg:h-[500px] lg:w-[450px]' />
         </div>
 
-        <div className='lg:mt-24'>
+        <div>
           <h1 className='text-stone-950 text-opacity-90 text-[25px] font-Lilita uppercase leading-7 mb-4'>Nossas entregas</h1>
 
           <div className='w-96 h-[90px] bg-white rounded-[10px] shadow flex flex-wrap justify-center items-center mb-2 lg:w-[500px] lg:justify-start'>
@@ -58,7 +58,7 @@ export const Delivery = () => {
         </div>
       </div>
 
-      <div className='w-96 h-72 mt-16 bg-red-600 rounded-[10px] flex flex-col items-center lg:w-[1000px] lg:h-32 lg:flex-row lg:justify-between'>
+      <div id='contato' className='w-96 h-72 mt-16 bg-red-600 rounded-[10px] flex flex-col items-center lg:w-[1000px] lg:h-32 lg:flex-row lg:justify-between'>
         <img src={phoneIcon} alt="" className='w-24 mt-3  lg:mt-0 lg:ml-6 lg:mr-4' />
 
         <div className='border-t lg:border-t-0 border-black mt-2 lg:border-l lg:mt-0 lg:-ml-32'>
