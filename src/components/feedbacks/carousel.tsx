@@ -16,7 +16,7 @@ export const Carousel = ({ children }:CarouselProps) => {
     speed: 300,
     slidesToShow: 3,
     variableWidth:true,
-    slidesToScroll: 3,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
@@ -30,12 +30,14 @@ export const Carousel = ({ children }:CarouselProps) => {
         breakpoint: 780,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]

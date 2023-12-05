@@ -61,11 +61,11 @@ export const Delivery = () => {
       <div id='contato' className='w-96 h-72 mt-16 bg-red-600 rounded-[10px] flex flex-col items-center lg:w-[1000px] lg:h-32 lg:flex-row lg:justify-between'>
         <img src={phoneIcon} alt="" className='w-24 mt-3  lg:mt-0 lg:ml-6 lg:mr-4' />
 
-        <div className='border-t lg:border-t-0 border-black mt-2 lg:border-l lg:mt-0 lg:-ml-32'>
+        <div className='border-t lg:border-t-0 border-black mt-2 lg:border-l lg:mt-0 lg:-ml-32 flex flex-col'>
           <h1 className='text-center text-stone-950 text-opacity-70 text-lg font-Lilita uppercase leading-relaxed mt-4 lg:text-[25px] lg:mt-0 lg:text-start lg:ml-4'>faça o seu pedido agora mesmo!</h1>
           <p className='text-center text-white text-opacity-90 text-sm font-normal font-Lato leading-tight w-72 lg:w-[460px] lg:text-start lg:ml-4'>Venha saborear a melhor experiência de hamburguenses artesanal do <span className='font-bold'>Empires Burger</span>, com temática medieval!</p>
         </div>
-        <div className='mr-9'>
+        <div className='lg:mr-9'>
           <button className='w-80 h-10 px-4 py-2 mt-4 bg-orange-100 rounded text-red-600 text-base font-black font-Lato uppercase leading-snug lg:w-48 lg:mt-0'>Solicitar Pedido</button>
         </div>
       </div>

@@ -25,10 +25,10 @@ export const Footer = () => {
           <img src={ifoodIcon} alt="ifood" className='w-7 h-4 mb-3' />
           <img src={instagramIcon} alt="instagram" className='w-7 h-6 mb-3' />
         </div>
-        <ul className='border-b w-96 lg:border-b-0 lg:flex lg:gap-5'>
-          <a href='#home' className='text-yellow-950 text-lg font-bold font-Lato leading-relaxed mb-3'>Home</a>
-          <a href='#local' className='text-yellow-950 text-lg font-Lato leading-relaxed mb-3'>Localização</a>
-          <a href='#cardapio' className='text-yellow-950 text-lg font-Lato leading-relaxed mb-3'>Cardapio</a>
+        <ul className='border-b w-96 lg:border-b-0 lg:flex'>
+          <a href='#home' className='text-yellow-950 text-lg font-bold font-Lato leading-relaxed mb-3 mr-3'>Home</a>
+          <a href='#local' className='text-yellow-950 text-lg font-Lato leading-relaxed mb-3 mr-3'>Localização</a>
+          <a href='#cardapio' className='text-yellow-950 text-lg font-Lato leading-relaxed mb-3 mr-3'>Cardapio</a>
           <a className='text-yellow-950 text-lg font-Lato leading-relaxed mb-4'>Sobre</a>
         </ul>
         <div className='hidden items-center gap-3 mb-3 border-b  justify-center mt-3 lg:border-b-0 lg:flex'>
