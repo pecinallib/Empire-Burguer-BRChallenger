@@ -1,17 +1,27 @@
+import { useEffect, useState } from 'react'
 import cardWoman from '../../assets/card-woman-eating.png'
 
+interface CardapioBurguer {
+  plate: string,
+  price: number,
+  ingredients: string
+}
+
 export const Cardapio = () => {
+  const [menu, setMenu] = useState<CardapioBurguer[]>([])
   
-  const number = 49.99
-  const formatNumber = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  }).format(number)
-      
+  useEffect(() => {
+    fetch('https://api.brchallenges.com/api/empire-burger/menu').then(async (response) => {
+      const json = await response.json()
+      setMenu(json)
+    }).catch((error) => {
+      console.log('Error', error);  
+    })
+  }, [])     
 
   return (
     <>
-      <section className='lg:flex lg:w-full'>
+      <section id='' className='lg:flex lg:w-full'>
         <div className="bg-bannerMenuMobile w-full h-60 lg:bg-bannerMenuWeb lg:bg-no-repeat lg:h-[520px] lg:bg-cover">
           <div className="flex flex-col ml-3 h-full justify-center lg:items-center lg:ml-32">
             <h1 className="w-96 text-yellow-950 text-2xl font-Lilita uppercase leading-7 lg:text-slate-950">Escolha o seu combo <br/> imperial, <span className="w-[158.08px] h-[30.09px] bg-amber-500 rounded-md p-1">peça agora!</span></h1>
@@ -23,21 +33,14 @@ export const Cardapio = () => {
         <div className="w-full h-[465px] bg-yellow-950 flex flex-col items-center lg:w-full lg:h-[520px] xl:items-start">
           <h1 className="w-96 text-amber-500 text-[25px] font-Lilita uppercase leading-7 mt-12 xl:hidden">Nossa especialidade</h1>
           <h1 className="w-[550px] text-amber-500 text-[25px] font-Lilita uppercase leading-7 mt-12 hidden xl:block ml-8">Cardápio imperial | Burger</h1>
-          <h2 className="w-96 text-orange-100 text-lg font-Lilita uppercase leading-snug mt-3 xl:hidden">Classic burger ................................ {formatNumber} </h2>
-          <h2 className="w-[550px] hidden text-orange-100 text-lg font-Lilita uppercase leading-snug mt-8 xl:block ml-8">Classic burger ......................................................................... {formatNumber} </h2>
-          <p className="w-96 text-white text-opacity-90 text-sm font-Lato leading-snug xl:w-[550px] xl:ml-8">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p>
-        
-          <h2 className="w-96 text-orange-100 text-lg font-Lilita uppercase leading-snug mt-3 xl:hidden">Special big burger ........................ {formatNumber} </h2>
-          <h2 className="w-[550px] hidden text-orange-100 text-lg font-Lilita uppercase leading-snug mt-8 xl:block ml-8">Special big burger ................................................................. {formatNumber} </h2>
-          <p className="w-96 text-white text-opacity-90 text-sm font-Lato leading-snug xl:w-[550px] xl:ml-8">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p>
+          
+          {menu.map((item, key) => (
+            <div key={key}>
 
-          <h2 className="w-96 text-orange-100 text-lg font-Lilita uppercase leading-snug mt-3 xl:hidden">special big burger ........................ {formatNumber} </h2>
-          <h2 className="w-[550px] hidden text-orange-100 text-lg font-Lilita uppercase leading-snug mt-8 xl:block ml-8">Special big burger ................................................................. {formatNumber} </h2>
-          <p className="w-96 text-white text-opacity-90 text-sm font-Lato leading-snug xl:w-[550px] xl:ml-8">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p>
-
-          <h2 className="w-96 text-orange-100 text-lg font-Lilita uppercase leading-snug mt-3 xl:hidden">Mexican burger ............................. {formatNumber}</h2>
-          <h2 className="w-[550px] hidden text-orange-100 text-lg font-Lilita uppercase leading-snug mt-8 xl:block ml-8 ">Mexican burger ...................................................................... {formatNumber} </h2>
-          <p className="w-96 text-white text-opacity-90 text-sm font-Lato leading-snug xl:w-[550px] xl:ml-8">Hamburguer bonino 160g, Molho, Bacon, Queijo prato, peito de peru, Tomate, Alface, Servidor do pão de batata</p>
+              <h2 className="w-96 mt-3 text-orange-100 text-lg font-Lilita uppercase leading-snug xl:block xl:mt-8 xl:ml-8 xl:w-[550px]">{item.plate} ............................ {new Intl.NumberFormat("pt-BR", {style: "currency",currency: "BRL"}).format(item.price)} </h2>
+              <p className="w-96 text-white text-opacity-90 text-sm font-Lato leading-snug xl:w-[550px] xl:ml-8">{item.ingredients}</p>
+            </div>
+          ))}        
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import { Services } from './pages/services'
 import { Footer } from './pages/footer'
 import { Cardapio } from './pages/cardapio'
 import { Delivery } from './pages/delivery'
+import { FeedBacks } from './components/feedbacks'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Box/>
     <Services/>
     <Cardapio/>
+    <FeedBacks/>
     <Delivery/>
     <Footer/>
     </>
